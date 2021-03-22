@@ -52,7 +52,7 @@ function generatePassword(){
 
   //Give user the option to include special characters.
   for(var i = 0; i < passwordLength; i++){
-    password += passwordCharacters.charAt(Math.floor(math.random()*passwordCharacters.length));
+    password += passwordCharacters.charAt(Math.floor(Math.random()*passwordCharacters.length));
   }
 
   var passwordText = document.getElementById("password");
@@ -66,6 +66,4 @@ generateBtn.addEventListener("click", writePassword);
 // Write password to the #password input  
 function writePassword() {
   generatePassword();
-
-  
 }
