@@ -49,19 +49,27 @@ function generatePassword(){
   if(incPasswordSpecial = true){
     passwordCharacters += passwordSpecial;
   }
+  randomisePassword()
 
-  //Give user the option to include special characters.
-  for(var i = 0; i < passwordLength; i++){
-    password += passwordCharacters.charAt(Math.floor(Math.random()*passwordCharacters.length));
+  function randomisePassword(){
+    //ensure there are nothing in password
+    password = "";
+    //add loop to get password chars.
+    for(var i = 0; i < passwordLength; i++){
+      password += passwordCharacters.charAt(Math.floor(Math.random()*passwordCharacters.length));
+      //if password has atleast one of each specified cases than contiue.., else revoke randomisePassword.
+    }
+    if(password.indexOf(passwordCapital) && password.indexOf(passwordLower) && password.indexOf(passwordNumber) && password.indexOf(passwordSpecial)){
+      var passwordText = document.getElementById("password");
+      passwordText.textContent = password;
+    }else{
+      randomisePassword();
+    }
   }
-
-  var passwordText = document.getElementById("password");
-  passwordText.textContent = password;
 }
 
 //When I click a button, write password in the .
 generateBtn.addEventListener("click", writePassword);
-
 
 // Write password to the #password input  
 function writePassword() {
