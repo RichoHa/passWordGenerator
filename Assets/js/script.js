@@ -25,28 +25,28 @@ function generatePassword() {
   //Give user the option to include capital letters.
   var incPasswordCapital = confirm("Do you want capital letters in your password?");
 
-  if (incPasswordCapital = true) {
+  if (incPasswordCapital === true) {
     passwordCharacters += passwordCapital;
   }
 
   //Give user the option to include lower case letters.
   var incPasswordLower = confirm("Do you want lower case letters in your password?");
 
-  if (incPasswordLower = true) {
+  if (incPasswordLower === true) {
     passwordCharacters += passwordLower;
   }
 
   //Give user the option to include numbers.
   var incPasswordNumber = confirm("Do you want numbers in your password?");
 
-  if (incPasswordNumber = true) {
+  if (incPasswordNumber === true) {
     passwordCharacters += passwordNumber;
   }
 
   //Give user the option to include special characters.
   var incPasswordSpecial = confirm("Do you want special characters in your password?");
 
-  if (incPasswordSpecial = true) {
+  if (incPasswordSpecial === true) {
     passwordCharacters += passwordSpecial;
   }
   randomisePassword()
